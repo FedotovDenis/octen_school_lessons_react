@@ -2,3 +2,18 @@
   text-align: center;
 }
 
+.User, .Post {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+}
+
+.User img, .Post img {
+  max-width: 100%;
+}
+
+.Users, .Posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
