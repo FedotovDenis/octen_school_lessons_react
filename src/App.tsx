@@ -1,12 +1,16 @@
-import React from 'react';
-import './App.css';
+/*
+2. usePrevious - hook that allows a component to keep track of the previous value of a variable
+ */
 
-function App() {
-  return (
-    <div className="App">
-      <p>Hello World</p>
-    </div>
-  );
+import React from 'react';
+import Content from "./componens/Content";
+
+const App: React.FC = () => {
+    return (
+        <div className="App">
+            <Content />
+        </div>
+    );
 }
 
 export default App;
