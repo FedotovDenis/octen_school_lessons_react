@@ -1,0 +1,53 @@
+.App {
+    text-align: center;
+}
+
+.Content {
+    display: flex;
+}
+
+.Users {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.User {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: auto;
+    text-align: left;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.PostsContainer {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Posts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Post {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
