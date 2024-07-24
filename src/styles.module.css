@@ -1,0 +1,42 @@
+.App {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: blue;
+}
+
+.Users, .Posts, .Comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.User, .Post, .Comment {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.User h2, .Post h2, .Comment h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.User p, .Post p, .Comment p {
+    margin: 5px 0;
+}
