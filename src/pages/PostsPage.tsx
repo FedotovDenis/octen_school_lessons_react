@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getPosts } from '../services/PostsService';
 import Post from '../components/Posts/Post';
 
 interface PostType {
@@ -12,10 +12,12 @@ const PostsPage: React.FC = () => {
     const [posts, setPosts] = useState<PostType[]>([]);
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response => {
-                setPosts(response.data);
-            });
+        const fetchPosts = async () => {
+            const postsData = await getPosts();
+            setPosts(postsData);
+        };
+
+        fetchPosts();
     }, []);
 
     return (

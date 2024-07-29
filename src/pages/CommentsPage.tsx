@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getComments } from '../services/CommentsService';
 import Comment from '../components/Comments/Comment';
 
 interface CommentType {
@@ -13,10 +13,12 @@ const CommentsPage: React.FC = () => {
     const [comments, setComments] = useState<CommentType[]>([]);
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/comments')
-            .then(response => {
-                setComments(response.data);
-            });
+        const fetchComments = async () => {
+            const commentsData = await getComments();
+            setComments(commentsData);
+        };
+
+        fetchComments();
     }, []);
 
     return (

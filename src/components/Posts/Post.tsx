@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Post: React.FC<{ id: number, title: string, body: string }> = ({ id, title, body }) => {
+interface PostProps {
+    id: number;
+    title: string;
+    body: string;
+}
+
+const Post: React.FC<PostProps> = ({ id, title, body }) => {
     return (
         <div>
             <h2>{title}</h2>

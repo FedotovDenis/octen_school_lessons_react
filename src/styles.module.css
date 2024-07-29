@@ -2,41 +2,32 @@
     text-align: center;
 }
 
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: blue;
-}
-
-.Users, .Posts, .Comments {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.User, .Post, .Comment {
-    border: 1px solid #ccc;
-    margin: 10px;
+input {
+    margin: 5px;
     padding: 10px;
-    width: 80%;
-    max-width: 600px;
-    text-align: left;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.User h2, .Post h2, .Comment h2 {
-    margin: 0;
-    font-size: 1.5em;
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
-.User p, .Post p, .Comment p {
-    margin: 5px 0;
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }

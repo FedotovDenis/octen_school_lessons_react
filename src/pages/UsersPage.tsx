@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getUsers } from '../services/UsersService';
 import User from '../components/Users/User';
 
 interface UserType {
@@ -12,10 +12,12 @@ const UsersPage: React.FC = () => {
     const [users, setUsers] = useState<UserType[]>([]);
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(response => {
-                setUsers(response.data);
-            });
+        const fetchUsers = async () => {
+            const usersData = await getUsers();
+            setUsers(usersData);
+        };
+
+        fetchUsers();
     }, []);
 
     return (
