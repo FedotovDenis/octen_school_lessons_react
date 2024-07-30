@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getPosts } from '../services/PostsService';
+import { getPosts, PostType } from '../services/PostsService';
 import Post from '../components/Posts/Post';
-
-interface PostType {
-    id: number;
-    title: string;
-    body: string;
-}
 
 const PostsPage: React.FC = () => {
     const [posts, setPosts] = useState<PostType[]>([]);
