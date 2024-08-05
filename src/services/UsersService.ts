@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const API_URL = 'https://jsonplaceholder.typicode.com';
-
 export interface UserType {
     id: number;
     name: string;
@@ -9,6 +7,6 @@ export interface UserType {
 }
 
 export const getUsers = async (): Promise<UserType[]> => {
-    const response = await axios.get<UserType[]>(`${API_URL}/users`);
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users');
     return response.data;
 };

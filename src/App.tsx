@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 import UsersPage from './pages/UsersPage';
 import PostsPage from './pages/PostsPage';
 import CommentsPage from './pages/CommentsPage';
-import HomePage from './pages/HomePage';
-import './styles.module.css';
+import UserPostsPage from './pages/UserPostsPage';
+import PostCommentsPage from './pages/PostCommentsPage';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,8 @@ const App: React.FC = () => {
                     <Route path="/users" element={<UsersPage />} />
                     <Route path="/posts" element={<PostsPage />} />
                     <Route path="/comments" element={<CommentsPage />} />
+                    <Route path="/users/:userId/posts" element={<UserPostsPage />} />
+                    <Route path="/posts/:postId/comments" element={<PostCommentsPage />} />
                 </Routes>
             </div>
         </Router>

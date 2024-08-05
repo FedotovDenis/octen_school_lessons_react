@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { getUsers, UserType } from '../services/UsersService';
+import { getUsers } from '../services/UsersService';
 import User from '../components/Users/User';
+import { useNavigate } from 'react-router-dom';
+
+export interface UserType {
+    id: number;
+    name: string;
+    email: string;
+}
 
 const UsersPage: React.FC = () => {
     const [users, setUsers] = useState<UserType[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -14,12 +22,15 @@ const UsersPage: React.FC = () => {
         fetchUsers();
     }, []);
 
+    const handleUserClick = (userId: number) => {
+        navigate(`/users/${userId}/posts`);
+    };
+
     return (
-        <div>
-            <h1>Users</h1>
-            <div>
-                {users.map(user => <User key={user.id} {...user} />)}
-            </div>
+        <div className="Users">
+            {users.map(user => (
+                <User key={user.id} {...user} onClick={handleUserClick} />
+            ))}
         </div>
     );
 };

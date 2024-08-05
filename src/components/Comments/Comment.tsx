@@ -7,7 +7,7 @@ interface CommentProps {
     email: string;
 }
 
-const Comment: React.FC<CommentProps> = ({ id, name, body, email }) => {
+const Comment: React.FC<CommentProps> = ({ name, body, email }) => {
     return (
         <div>
             <h2>{name}</h2>
