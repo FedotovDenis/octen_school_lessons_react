@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getComments } from '../services/CommentsService';
+import { getComments, CommentType } from '../services/CommentsService';
 import Comment from '../components/Comments/Comment';
-
-export interface CommentType {
-    id: number;
-    name: string;
-    email: string;
-    body: string;
-    postId: number;
-}
 
 const CommentsPage: React.FC = () => {
     const [comments, setComments] = useState<CommentType[]>([]);
@@ -23,9 +15,10 @@ const CommentsPage: React.FC = () => {
     }, []);
 
     return (
-        <div className="Comments">
+        <div>
+            <h1>Comments</h1>
             {comments.map(comment => (
-                <Comment key={comment.id} {...comment} />
+                <Comment key={comment.id} comment={comment} />
             ))}
         </div>
     );

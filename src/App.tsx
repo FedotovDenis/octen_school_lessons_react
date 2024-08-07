@@ -13,12 +13,21 @@ const App: React.FC = () => {
             <div>
                 <nav>
                     <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/users">Users</Link></li>
-                        <li><Link to="/posts">Posts</Link></li>
-                        <li><Link to="/comments">Comments</Link></li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/users">Users</Link>
+                        </li>
+                        <li>
+                            <Link to="/posts">Posts</Link>
+                        </li>
+                        <li>
+                            <Link to="/comments">Comments</Link>
+                        </li>
                     </ul>
                 </nav>
+
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/users" element={<UsersPage />} />

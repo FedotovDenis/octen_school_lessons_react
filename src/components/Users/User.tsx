@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface UserProps {
-    id: number;
-    name: string;
-    email: string;
-    onClick: (userId: number) => void;
+    user: {
+        id: number;
+        name: string;
+    };
 }
 
-const User: React.FC<UserProps> = ({ id, name, email, onClick }) => {
+const User: React.FC<UserProps> = ({ user }) => {
     return (
-        <div onClick={() => onClick(id)}>
-            <h2>{name}</h2>
-            <p>{email}</p>
+        <div>
+            <h2>{user.name}</h2>
+            <Link to={`/users/${user.id}/posts`}>View Posts</Link>
         </div>
     );
 };

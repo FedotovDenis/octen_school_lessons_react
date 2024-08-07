@@ -1,17 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface PostProps {
-    id: number;
-    title: string;
-    body: string;
-    onClick: (postId: number) => void;
+    post: {
+        id: number;
+        title: string;
+        body: string;
+    };
 }
 
-const Post: React.FC<PostProps> = ({ id, title, body, onClick }) => {
+const Post: React.FC<PostProps> = ({ post }) => {
     return (
-        <div onClick={() => onClick(id)}>
-            <h2>{title}</h2>
-            <p>{body}</p>
+        <div>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+            <Link to={`/posts/${post.id}/comments`}>View Comments</Link>
         </div>
     );
 };

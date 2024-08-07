@@ -1,13 +1,16 @@
-import axios from 'axios';
-
 export interface PostType {
     id: number;
+    userId: number;
     title: string;
     body: string;
-    userId: number;
 }
 
 export const getPosts = async (): Promise<PostType[]> => {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    return response.data;
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    return response.json();
+};
+
+export const getUserPosts = async (userId: number): Promise<PostType[]> => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+    return response.json();
 };

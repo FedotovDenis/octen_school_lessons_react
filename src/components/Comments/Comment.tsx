@@ -1,18 +1,18 @@
 import React from 'react';
 
 interface CommentProps {
-    id: number;
-    name: string;
-    body: string;
-    email: string;
+    comment: {
+        id: number;
+        name: string;
+        body: string;
+    };
 }
 
-const Comment: React.FC<CommentProps> = ({ name, body, email }) => {
+const Comment: React.FC<CommentProps> = ({ comment }) => {
     return (
         <div>
-            <h2>{name}</h2>
-            <p>{body}</p>
-            <p>{email}</p>
+            <h3>{comment.name}</h3>
+            <p>{comment.body}</p>
         </div>
     );
 };
